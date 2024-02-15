@@ -19,14 +19,14 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   bottomTabBar: {
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     padding: 10,
     borderRadius: 15,
     marginHorizontal: 10,
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    elevation: 5, // Add elevation for a shadow effect
+    // elevation: 5, // Add elevation for a shadow effect
   },
   articleContainer: {
     flex: 1,

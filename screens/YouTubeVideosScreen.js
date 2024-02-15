@@ -1,9 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
-import { WebView } from 'react-native-webview';
+// AllPostsScreen.js
+
+import React, { useState, useEffect } from 'react';
+import { View, FlatList, TouchableOpacity, Text, Image, StyleSheet } from 'react-native';
+import { getYouTubeVideos } from '../api/youtubeApi'; // Update the path to your API file
+import { useNavigation } from '@react-navigation/native';
+import moment from 'moment'; // Import moment library for date formatting
 
 const YouTubeVideosScreen = () => {
+  const navigation = useNavigation();
   const [videos, setVideos] = useState([]);
+  const channelId = 'UCDGwg0flJkk3LNjd_6lQUjA'; // Replace this with your actual YouTube channel ID
 
   useEffect(() => {
     fetchYouTubeVideos();
@@ -11,44 +17,42 @@ const YouTubeVideosScreen = () => {
 
   const fetchYouTubeVideos = async () => {
     try {
-      const apiKey = 'AIzaSyAyv4f7c8T5I6r0-MtCClHfBCF2d309BiU'; // Replace with your actual YouTube Data API key
-      const channelId = 'UCx-tONSNtZJ7R1j5EiAlKPA'; // Replace with the desired channel ID
-
-      const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=10&order=date&type=video&key=${apiKey}`
-      );
-
-      const data = await response.json();
-
-      if (data.items) {
-        // Extract video items from the response
-        const videoItems = data.items.map((item) => ({
-          id: item.id.videoId,
-          title: item.snippet.title,
-        }));
-
-        setVideos(videoItems);
-      }
+      const videosData = await getYouTubeVideos(channelId); // Pass the channel ID to fetch videos
+      setVideos(videosData);
     } catch (error) {
       console.error('Error fetching YouTube videos:', error);
     }
   };
 
+  const navigateToVideo = (videoId) => {
+    navigation.navigate('Video', { videoId });
+  };
+
+  const renderRelativeTime = (time) => {
+    return moment(time).fromNow();
+  };
+
+  const renderVideoItem = ({ item }) => (
+    
+    <View>
+    <TouchableOpacity onPress={() => navigateToVideo(item.id)} style={styles.videoContainer}>
+      <Image source={{ uri: item.featuredImage }} style={styles.image} />
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.details}>{renderRelativeTime(item.publishedAt)} | {item.commentCount} Comments | {item.totalViews} Views</Text>
+      </View>
+    </TouchableOpacity>
+    <View style={styles.horizontalLine} />
+  </View>
+  );
+
   return (
     <View style={styles.container}>
-      {/* <Text style={styles.header}>Watch</Text> */}
       <FlatList
         data={videos}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.videoContainer}>
-            <WebView
-              source={{ uri: `https://www.youtube.com/embed/${item.id}` }}
-              style={styles.webView}
-            />
-            <Text style={styles.videoTitle}>{item.title}</Text>
-          </View>
-        )}
+        renderItem={renderVideoItem}
+        contentContainerStyle={styles.flatListContainer}
       />
     </View>
   );
@@ -58,32 +62,46 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#f7f7f7',
   },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#00923F',
-    marginTop: 50,
-    textAlign: 'Left',
+  flatListContainer: {
+    paddingBottom: 10,
   },
   videoContainer: {
-    marginBottom: 24,
-    backgroundColor: '#fff',
-    borderRadius: 12,
+    flexDirection: 'row',
+    marginBottom: 10,
+    borderRadius: 10,
     overflow: 'hidden',
-    elevation: 3,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
-  webView: {
-    height: 200,
-    borderRadius: 12,
+  horizontalLine: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    marginBottom: 10,
   },
-  videoTitle: {
-    fontSize: 18,
+  image: {
+    width: 136,
+    height: 79,
+    borderRadius: 10,
+  },
+  textContainer: {
+    flex: 1,
+    paddingLeft: 16,
+    paddingTop: 13,
+    alignContent: 'center'
+  },
+  title: {
+    fontSize: 14,
     fontWeight: 'bold',
-    margin: 12,
-    color: '#333',
-    textAlign: 'left',
+    height: 'auto',
+    color: '#00923F',
+    },
+  details: {
+    fontSize: 12,
+    color: '#888',
+    paddingRight: 25,
+    lineHeight: 20,
+
   },
 });
 

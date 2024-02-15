@@ -9,10 +9,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Feather, Ionicons, MaterialIcons } from '@expo/vector-icons';
 
 // Custom Components
 import CustomHeader from './CustomHeader';
 import Sidebar from './Sidebar';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 
 // Screens
 import HomeScreen from './screens/HomeScreen';
@@ -89,12 +92,6 @@ const LikedNewsStack = () => (
           fontSize: 20,
           color: '#00923F',
         },
-        headerLeft: () => (
-          <Image source={require('./assets/head.png')} style={{ width: 40, height: 40, borderRadius: 20, marginLeft: 15 }} />
-        ),
-        headerRight: () => (
-          <FontAwesomeIcon name="bell-o" size={20} color="#00923F" style={{ marginRight: 20 }} />
-        ),
       }}
     />
   </Stack.Navigator>
@@ -112,31 +109,6 @@ const NewsListStack = () => (
   </Stack.Navigator>
 );
 
-// const SettingsStack = () => (
-//   <Stack.Navigator initialRouteName="Settings">
-//     <Stack.Screen
-//       name="Settings"
-//       component={SettingsScreen}
-//       options={{
-//         headerTitle: 'Setting',
-//         headerTitleAlign: 'center',
-//         headerTitleStyle: {
-//           fontWeight: 'bold',
-//           fontSize: 20, // You can adjust the font size as needed
-//           color: '#00923F'
-//         },
-//         headerLeft: () => (
-//           // Your rounded image component goes here
-//           <Image source={require('./assets/head.png')} style={{ width: 40, height: 40, borderRadius: 20, marginLeft: 15 }} />
-//         ),
-//         headerRight: () => (
-//           // Your bell icon component goes here
-//           <FontAwesomeIcon name="bell-o" size={20} color="#00923F" style={{ marginRight: 20 }} />
-//         ),
-//       }}
-//     />
-//   </Stack.Navigator>
-// );
 
 const AllPostsStack = () => (
   <Stack.Navigator  initialRouteName="AllPostsStack "
@@ -168,21 +140,6 @@ const YouTubeStack = () => (
   </Stack.Navigator>
 );
 
-// const CategoriesStack = () => (
-//   <Stack.Navigator initialRouteName="Categories" screenOptions={{ headerShown: false }}>
-//     <Stack.Screen name="Categories" component={CategoriesScreen} />
-//     <Stack.Screen name="Aviation" component={AviationScreen} />
-//     <Stack.Screen name="Business" component={BusinessScreen} />
-//     <Stack.Screen name="Election" component={ElectionScreen} />
-//     <Stack.Screen name="Africa" component={AfricaScreen} />
-//     <Stack.Screen name="Breaking" component={BreakingScreen} />
-//     <Stack.Screen name="Celebrity" component={CelebrityScreen} />
-//     <Stack.Screen name="Crime" component={CrimeScreen} />
-//     <Stack.Screen name="Culture" component={CultureScreen} />
-//     <Stack.Screen name="Agriculture" component={AgricultureScreen} />
-//   </Stack.Navigator>
-// );
-
 const MainTabs = () => (
   <Tab.Navigator
     initialRouteName="Feed"
@@ -200,8 +157,8 @@ const MainTabs = () => (
         headerShown: false,
         tabBarLabel: 'Home',
         tabBarIcon: ({ color, size }) => (
-          <FontAwesomeIcon name="home" color={color} size={size} />
-        ),
+          <Feather name="home" color={color} size={size} />
+        )
       }}
     />
     <Tab.Screen
@@ -209,36 +166,26 @@ const MainTabs = () => (
       component={AllPostsStack}
       options={{
         headerShown: false,
-        tabBarLabel: 'All Posts',
+        tabBarLabel: 'News',
         tabBarIcon: ({ color, size }) => (
-          <FontAwesomeIcon name="bars" color={color} size={size} />
+          <Ionicons name="newspaper" color={color} size={size} />
         ),
       }}
     />
-   <Tab.Screen
+    <Tab.Screen
       name="YouTube"
       component={YouTubeStack}
       options={{
         headerShown: false,
         tabBarLabel: 'Videos',
         tabBarIcon: ({ color, size }) => (
-          <FontAwesomeIcon name="play-circle" color={color} size={size} />
+          <MaterialIcons name="video-library" color={color} size={size} />
         ),
       }}
     />
-    {/* <Tab.Screen
-      name="Categories"
-      component={CategoriesStack}
-      options={{
-        headerShown: false,
-        tabBarLabel: 'Categories',
-        tabBarIcon: ({ color, size }) => (
-          <FontAwesomeIcon name="compass" color={color} size={size} />
-        ),
-      }}
-    />  */}
   </Tab.Navigator>
 );
+
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -261,7 +208,7 @@ const App = () => {
         <Drawer.Screen name="AboutUs" component={AboutUsScreen} />
         <Drawer.Screen name="ContactUs" component={ContactUsScreen} />
         <Drawer.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />
-        {/* <Drawer.Screen name="Aviation" component={AviationScreen} />
+        <Drawer.Screen name="Aviation" component={AviationScreen} />
         <Drawer.Screen name="Business" component={BusinessScreen} />
         <Drawer.Screen name="Election" component={ElectionScreen} />
         <Drawer.Screen name="Africa" component={AfricaScreen} />
@@ -270,7 +217,7 @@ const App = () => {
         <Drawer.Screen name="Cover" component={CoverScreen} />
         <Drawer.Screen name="Crime" component={CrimeScreen} />
         <Drawer.Screen name="Culture" component={CultureScreen} />
-        <Drawer.Screen name="Agriculture" component={AgricultureScreen} /> */}
+        <Drawer.Screen name="Agriculture" component={AgricultureScreen} />
     </Drawer.Navigator>
   </NavigationContainer>
   );

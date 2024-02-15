@@ -39,7 +39,7 @@ const NewsList = () => {
       <Image source={{ uri: item.featuredImage }} style={styles.image} />
       <View style={styles.textContainer}>
         <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.details}>{renderRelativeTime(item.publishedAt)} | {item.commentCount} Comments</Text>
+        <Text style={styles.details}>{renderRelativeTime(item.publishedAt)} | {item.commentCount} Comments | {item.totalViews} Views</Text>
       </View>
     </TouchableOpacity>
     <View style={styles.horizontalLine} />
@@ -87,18 +87,20 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
     paddingLeft: 16,
-    paddingTop: 10,
+    paddingTop: 13,
     alignContent: 'center'
   },
   title: {
     fontSize: 14,
     fontWeight: 'bold',
-    height: 45,
+    height: 'auto',
     color: '#00923F',
     },
   details: {
     fontSize: 12,
     color: '#888',
+    paddingRight: 25,
+    lineHeight: 20,
 
   },
 });

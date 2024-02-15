@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   sidebarItemText: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: '600',
     color: '#333',
   },

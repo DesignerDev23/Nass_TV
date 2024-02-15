@@ -13,7 +13,7 @@ const BottomTabNavigator = () => {
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: '#00923F',
-        inactiveTintColor: 'gray',
+        inactiveTintColor: 'red',
         style: {
           backgroundColor: '#fff',
           borderTopWidth: 1,

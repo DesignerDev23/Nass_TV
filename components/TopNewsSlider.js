@@ -29,7 +29,7 @@ const TopNewsSlider = ({ topNews, onPress }) => {
 
     return (
       <TouchableOpacity onPress={() => onPress(item)}>
-        <View style={{ borderRadius: 10, overflow: 'hidden', marginBottom: 15 }}>
+        <View style={{ borderRadius: 10, overflow: 'hidden', marginBottom: 15, marginTop: 25 }}>
           <Image source={{ uri: item.featuredImage.node.sourceUrl }} style={styles.image} />
           <View style={styles.overlay} />
           <View style={styles.cardInfoContainer}>
@@ -49,7 +49,7 @@ const TopNewsSlider = ({ topNews, onPress }) => {
 
   return (
     <View>
-      <Carousel layout="default" data={topNews} renderItem={renderCard} sliderWidth={360} itemWidth={350} loop />
+      <Carousel layout="default" data={topNews} renderItem={renderCard} sliderWidth={360} itemWidth={340} loop />
     </View>
   );
 };
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     top: 140,
   },
   cardInfoContainer: {
-    padding: 10,
+    padding: 15,
     position: 'absolute',
     bottom: 0,
     left: 0,

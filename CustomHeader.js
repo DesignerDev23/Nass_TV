@@ -1,41 +1,43 @@
 // CustomHeader.js
 import React from 'react';
-import { Image, TouchableOpacity, View } from 'react-native';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import { View, TextInput, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const CustomHeader = ({ navigation, title }) => {
   return {
     headerTitle: () => (
-      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 78, }}>
-        {/* Drawer Toggle Icon */}
-        {/* <TouchableOpacity
-          style={{  }}
-          onPress={() => navigation.toggleDrawer()}
-        >
-          <Ionicons name="menu" size={24} color="#00923F" />
-        </TouchableOpacity> */}
-
-    
-
-        {/* Bell Icon */}
-        <TouchableOpacity
-          style={{ marginRight: 15 }}
-          onPress={() => {
-            // Add your logic for bell icon press
+      <View style={styles.searchBox}>
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => {
+            // Add your logic for handling search input
           }}
-        >
-          <FontAwesomeIcon name="bell-o" size={20} color="#00923F" />
-        </TouchableOpacity>
+        />
+        <Ionicons name="search" size={20} color="#00923F" style={styles.searchIcon} />
       </View>
     ),
-    headerTitleAlign: 'center',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      fontSize: 20,
-      // color: '#00923F',
-    },
   };
 };
+
+const styles = StyleSheet.create({
+  searchBox: {
+    flexDirection: 'row',
+    width: '185%',
+    alignItems: 'center',
+    backgroundColor: ' rgba(0, 146, 63, 0.1)',
+    marginRight: 64,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    borderColor: '#00923F',
+  },
+  input: {
+    flex: 1,
+    height: 40,
+    paddingHorizontal: 10,
+  },
+  searchIcon: {
+    marginHorizontal: 8,
+  },
+});
 
 export default CustomHeader;
