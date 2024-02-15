@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-const API_KEY = 'AIzaSyAyv4f7c8T5I6r0-MtCClHfBCF2d309BiU';
+const API_KEY = 'AIzaSyAnUMszu4ntNJr8J62NaPGorlhKZsR8u8c';
 
 export const getYouTubeVideos = async (channelId) => {
   try {

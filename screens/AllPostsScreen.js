@@ -38,10 +38,7 @@ const AllPostsScreen = () => {
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.date}>{renderRelativeTime(item.date)}</Text>
-        <Text style={{ color: '#888', fontSize: 13, fontWeight: 'bold', marginBottom: 5 }}>
-                 Category: {item.categories.nodes[0].name}
-              </Text>
+        <Text style={styles.date}>{renderRelativeTime(item.date)}  |  {item.categories.nodes[0].name}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -71,40 +68,39 @@ const styles = StyleSheet.create({
   postContainer: {
     flexDirection: 'row',
     marginBottom: 18,
-    backgroundColor: '#fff',
     borderRadius: 10,
     height: 100,
     overflow: 'hidden',
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 2,
   },
   imageContainer: {
-    width: 100,
-    height: 100,
-    borderTopLeftRadius: 10,
-    borderBottomLeftRadius: 10,
+    width: 136,
+    height: 82,
+    borderRadius: 10,
   },
   image: {
     flex: 1,
     width: '100%',
     height: '100%',
-    borderTopLeftRadius: 10,
-    borderBottomLeftRadius: 10,
+    borderRadius: 10,
   },
   textContainer: {
     flex: 1,
-    padding: 16,
-    paddingTop: 7,
+    paddingLeft: 12,
+    paddingRight: 12,
+    paddingTop: 10,
   },
   title: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
-    height: 54,
+    height: 'auto',
+    color: '#00923F',
   },
   date: {
     color: '#888',
-    fontSize: 14,
+    fontSize: 12,
+    marginTop: 5,
   },
 });
 

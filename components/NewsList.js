@@ -87,20 +87,20 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
     paddingLeft: 16,
-    paddingTop: 13,
+    paddingTop: 10,
     alignContent: 'center'
   },
   title: {
     fontSize: 14,
     fontWeight: 'bold',
-    height: 'auto',
+    height: 45,
     color: '#00923F',
     },
   details: {
     fontSize: 12,
     color: '#888',
     paddingRight: 25,
-    lineHeight: 20,
+    lineHeight: 2,
 
   },
 });

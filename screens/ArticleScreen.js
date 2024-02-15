@@ -167,7 +167,16 @@ const localStyles = StyleSheet.create({
   postTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 8,
+    marginTop: -48,
+    color: '#00923F',
+    borderRadius: 10,
+    height: 90,
+    padding: 20,
+    textAlign: 'center',
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    elevation: 6,
+    marginBottom: 20,
   },
   categoriesContainer: {
     flexDirection: 'row',
@@ -179,10 +188,13 @@ const localStyles = StyleSheet.create({
     fontWeight: 'bold',
   },
   category: {
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#00923F',
     paddingVertical: 4,
     paddingHorizontal: 8,
     borderRadius: 8,
+    color: '#fff',
+    fontWeight: '500',
+    fontFamily: 'Poppins-Bla',
     marginRight: 8,
   },
   timePosted: {
