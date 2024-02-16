@@ -1,8 +1,6 @@
-// youtubeApi.js
-
 import axios from 'axios';
 
-const API_KEY = 'AIzaSyAnUMszu4ntNJr8J62NaPGorlhKZsR8u8c';
+const API_KEY = 'AIzaSyDVwj8llUAJmkkzu4sOMUuUL14L2JLrF4M';
 
 export const getYouTubeVideos = async (channelId) => {
   try {
@@ -26,6 +24,6 @@ export const getYouTubeVideos = async (channelId) => {
     }));
     return videos;
   } catch (error) {
-    throw new Error('Error fetching YouTube videos: ' + error.message);
+    throw new Error('Error fetching YouTube videos: ' + (error.message || 'Unknown error'));
   }
 };
