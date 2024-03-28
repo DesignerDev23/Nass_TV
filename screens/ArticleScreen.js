@@ -162,7 +162,7 @@ const localStyles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+    // borderBottomColor: '#ddd',
   },
   postTitle: {
     fontSize: 24,

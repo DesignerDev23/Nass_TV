@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, Linking } from 'react-native';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'; // Import MaterialCommunityIcons
+// Make sure you have installed the '@expo/vector-icons' package
 
 const Sidebar = ({ navigation }) => {
   const handleSidebarItemPress = (routeName) => {
@@ -15,26 +16,26 @@ const Sidebar = ({ navigation }) => {
     return (
       <View style={styles.socialMediaContainer}>
         <TouchableOpacity onPress={() => handleSocialMediaPress('https://web.facebook.com/dailynews24ng')}>
-          <FontAwesomeIcon name="facebook" size={24} color="#4267B2" style={styles.socialMediaIcon} />
+          <MaterialCommunityIcons name="facebook" size={24} color="#4267B2" style={styles.socialMediaIcon} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleSocialMediaPress('https://twitter.com/dailynews24_NG')}>
-          <FontAwesomeIcon name="twitter" size={24} color="#1DA1F2" style={styles.socialMediaIcon} />
+          <MaterialCommunityIcons name="twitter" size={24} color="#1DA1F2" style={styles.socialMediaIcon} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleSocialMediaPress('https://instagram.com/dailynews24.ng/')}>
-          <FontAwesomeIcon name="instagram" size={24} color="#E4405F" style={styles.socialMediaIcon} />
+          <MaterialCommunityIcons name="instagram" size={24} color="#E4405F" style={styles.socialMediaIcon} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleSocialMediaPress('https://www.youtube.com/@DailyNews24TV')}>
-          <FontAwesomeIcon name="youtube-play" size={24} color="#E4405F" style={styles.socialMediaIcon} />
+          <MaterialCommunityIcons name="youtube" size={24} color="#E4405F" style={styles.socialMediaIcon} />
         </TouchableOpacity>
         {/* Add more social media icons as needed */}
       </View>
     );
   };
 
-  const SidebarItem = ({ icon, text, onPress }) => (
-    <TouchableOpacity style={styles.sidebarItemContainer} onPress={onPress}>
+  const SidebarItem = ({ icon, text, onPress, backgroundColor }) => (
+    <TouchableOpacity style={[styles.sidebarItemContainer, { backgroundColor }]} onPress={onPress}>
       <View style={styles.iconContainer}>
-        {icon && <FontAwesomeIcon name={icon} size={17} color="#fff" />}
+        {icon && <MaterialIcons name={icon} size={20} color="#fff" />}
       </View>
       <Text style={styles.sidebarItemText}>{text}</Text>
     </TouchableOpacity>
@@ -45,14 +46,14 @@ const Sidebar = ({ navigation }) => {
       {/* Rounded App Icon and Text */}
       <View style={styles.appIconContainer}>
         <Image source={require('./assets/icon.png')} style={styles.appIcon} />
-        <Text style={styles.appName}>Daily News 24</Text>
+        <Text style={styles.appName}>Nasstv</Text>
       </View>
 
       {/* Sidebar Items */}
-      <SidebarItem icon="info-circle" text="About Us" onPress={() => handleSidebarItemPress('AboutUs')} />
-      <SidebarItem icon="phone" text="Contact Us" onPress={() => handleSidebarItemPress('ContactUs')} />
+      <SidebarItem icon="info" text="About Us" onPress={() => handleSidebarItemPress('AboutUs')} backgroundColor="rgba(0, 146, 63, 0.2)" />
+      <SidebarItem icon="contacts" text="Contact Us" onPress={() => handleSidebarItemPress('ContactUs')} backgroundColor="rgba(0, 146, 63, 0.2)" />
       {/* Privacy Policy */}
-      <SidebarItem icon="shield" text="Privacy Policy" onPress={() => handleSidebarItemPress('PrivacyPolicy')} />
+      <SidebarItem icon="privacy-tip" text="Privacy Policy" onPress={() => handleSidebarItemPress('PrivacyPolicy')} backgroundColor="rgba(0, 146, 63, 0.2)" />
 
       {/* Horizontal Line */}
       <View style={styles.horizontalLine} />
@@ -91,21 +92,22 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 16,
-
+    padding: 10,
+    borderRadius: 8,
   },
   iconContainer: {
     width: 30,
     height: 30,
-    borderRadius: 20,
+    borderRadius: 6,
     backgroundColor: '#00923F',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 10,
   },
   sidebarItemText: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#333',
+    fontSize: 14.5,
+    fontWeight: '800',
+    color: '#00923F',
   },
   horizontalLine: {
     height: 1,

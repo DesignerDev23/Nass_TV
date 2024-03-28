@@ -9,7 +9,10 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#00923F",
+      "fadeInDuration": 0,
+      "fadeOutDuration": 7000, 
+      "showDuration": 0 
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,10 +22,15 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#00923F"
       },
-      "package": "com.designer_dev.nasstv"
+      "package": "com.designer_dev.nasstv",
+      "splash": {
+        "resizeMode": "contain",
+        "backgroundColor": "#00923F",
+        "image": "./assets/splash.png" 
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
