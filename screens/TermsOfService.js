@@ -2,7 +2,7 @@ import * as React from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-const PrivacyPolicyScreen = () => {
+const TermsOfService = () => {
   const navigation = useNavigation();
 
   const handleBackPress = () => {
@@ -20,7 +20,7 @@ const PrivacyPolicyScreen = () => {
             source={require("../assets/back-button.png")}
           />
         </TouchableOpacity>
-        <Text style={styles.headerText}>Privacy Policy Information</Text>
+        <Text style={styles.headerText}>Terms Of Service</Text>
       </View>
 
       {/* Dummy Container Section */}
@@ -29,9 +29,7 @@ const PrivacyPolicyScreen = () => {
         <View style={[styles.dummyContainer, styles.edithLayout]}>
           {/* Dummy Text Content */}
           <Text style={[styles.dummyTextDummy, styles.dummyTypo1]}>
-            At BigTech Agency, we are committed to protecting your privacy and ensuring the security of your
-            personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you
-            access and use the NASSTV platform.
+          By accessing or using the NASSTV platform, you agree to comply with the following terms and conditions:
           </Text>
         </View>
 
@@ -45,14 +43,12 @@ const PrivacyPolicyScreen = () => {
         <View style={[styles.dummyContainer, styles.edithLayout]}>
           {/* Dummy Text Content (Duplicate) */}
           <Text style={[styles.tittle]}>
-          a. Information Collection and Use:
+          a. Use Of the Platform:
           </Text>
           <Text style={[styles.dummyTextDummy, styles.dummyTypo1]}>
-            We collect personal information, such as name, email address, and contact details, when you
-            register an account on the NASSTV platform. We may also collect non-personal information, such as
-            device information and usage data, to improve our services and user experience. Your personal information
-            is used solely for the purpose of providing and improving the NASSTV platform and will not be shared with
-            third parties without your consent.
+          You must use the NASSTV platform only for lawful purposes and in accordance with these Terms
+        of Service.You are responsible for maintaining the confidentiality of your account credentials and for all
+        activities that occur under your account.
           </Text>
         </View>
 
@@ -60,12 +56,12 @@ const PrivacyPolicyScreen = () => {
         <View style={[styles.dummyContainer, styles.edithLayout]}>
           {/* Dummy Text Content (Duplicate) */}
           <Text style={[styles.tittle]}>
-          b. Data Security:
+          b. Intellectual Property:
           </Text>
           <Text style={[styles.dummyTextDummy, styles.dummyTypo1]}>
-            We implement appropriate security measures to protect your personal information from unauthorized
-            access, alteration, disclosure, or destruction. Despite our best efforts, no method of transmission
-            over the internet or electronic storage is 100% secure. Therefore, we cannot guarantee absolute security.
+          The NASSTV platform and its content, including but not limited to text, graphics, logos, images,
+            and software, are the property of BigTech Agency and are protected by copyright and other
+            intellectual property laws.
           </Text>
         </View>
 
@@ -73,11 +69,12 @@ const PrivacyPolicyScreen = () => {
         <View style={[styles.dummyContainer, styles.edithLayout]}>
           {/* Dummy Text Content (Duplicate) */}
           <Text style={[styles.tittle]}>
-          c. Cookies:
+          c. Disclaimer of Warranty
           </Text>
           <Text style={[styles.dummyTextDummy, styles.dummyTypo1]}>
-            The NASSTV platform may use cookies to enhance your user experience. You can configure your browser
-            to refuse cookies or to indicate when a cookie is being sent.
+          The NASSTV platform is provided on an "as is" and "as available" basis without any warranties,
+            express or implied. BigTech Agency does not warrant that the NASSTV platform will be uninterrupted, error-free, or
+            free of viruses or other harmful components.
           </Text>
         </View>
 
@@ -85,11 +82,11 @@ const PrivacyPolicyScreen = () => {
         <View style={[styles.dummyContainer, styles.edithLayout]}>
           {/* Dummy Text Content (Duplicate) */}
           <Text style={[styles.tittle]}>
-          c. Third-party Links:
+          c. Limitation of Liability:
           </Text>
           <Text style={[styles.dummyTextDummy, styles.dummyTypo1]}>
-            The NASSTV platform may contain links to third-party websites or services. We are not responsible for
-            the privacy practices or content of these third-party sites.
+          In no event shall BigTech Agency be liable for any indirect, incidental, special, consequential, or
+            punitive damages arising out of or in connection with your use of the NASSTV platform.
           </Text>
         </View>
 
@@ -97,11 +94,12 @@ const PrivacyPolicyScreen = () => {
         <View style={[styles.dummyContainer, styles.edithLayout]}>
           {/* Dummy Text Content (Duplicate) */}
           <Text style={[styles.tittle]}>
-          c.  Changes to Privacy Policy:
+          c.   Indemnification:
           </Text>
           <Text style={[styles.dummyTextDummy, styles.dummyTypo1]}>
-            We reserve the right to update or modify this Privacy Policy at any time. Any changes will be effective
-            immediately upon posting on the NASSTV platform.
+          You agree to indemnify and hold BigTech Agency harmless from any claims, damages, losses,
+            liabilities, costs, and expenses arising out of or in connection with your use of the NASSTV
+            platform.
           </Text>
         </View>
       </View>
@@ -162,4 +160,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PrivacyPolicyScreen;
+export default TermsOfService;

@@ -20,26 +20,14 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 // Screens
 import HomeScreen from './screens/HomeScreen';
 import ArticleScreen from './screens/ArticleScreen';
-import LikedNewsScreen from './screens/LikedNewsScreen';
-import SettingsScreen from './screens/SettingsScreen';
 import AllPostsScreen from './screens/AllPostsScreen';
 import YouTubeVideosScreen from './screens/YouTubeVideosScreen';
 import AboutUsScreen from './screens/AboutUsScreen';
 import ContactUsScreen from './screens/ContactUsScreen';
 import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
-import CategoriesScreen from './screens/CategoriesScreen';
 import NewsListScreen from './screens/NewsListScreen';
-import AviationScreen from './screens/AviationScreen';
-import BusinessScreen from './screens/BusinessScreen';
-import ElectionScreen from './screens/ElectionScreen';
-import AfricaScreen from './screens/AfricaScreen';
-import BreakingScreen from './screens/BreakingScreen';
-import CelebrityScreen from './screens/CelebrityScreen';
-import CoverScreen from './screens/CoverScreen';
-import CrimeScreen from './screens/CrimeScreen';
-import CultureScreen from './screens/CultureScreen';
-import AgricultureScreen from './screens/AgricultureScreen';
 import VideoScreen from './screens/VideoScreen';
+import TermsOfService from './screens/TermsOfService';
 
 
 
@@ -208,16 +196,7 @@ const App = () => {
         <Drawer.Screen name="AboutUs" component={AboutUsScreen} />
         <Drawer.Screen name="ContactUs" component={ContactUsScreen} />
         <Drawer.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />
-        <Drawer.Screen name="Aviation" component={AviationScreen} />
-        <Drawer.Screen name="Business" component={BusinessScreen} />
-        <Drawer.Screen name="Election" component={ElectionScreen} />
-        <Drawer.Screen name="Africa" component={AfricaScreen} />
-        <Drawer.Screen name="Breaking" component={BreakingScreen} />
-        <Drawer.Screen name="Celebrity" component={CelebrityScreen} />
-        <Drawer.Screen name="Cover" component={CoverScreen} />
-        <Drawer.Screen name="Crime" component={CrimeScreen} />
-        <Drawer.Screen name="Culture" component={CultureScreen} />
-        <Drawer.Screen name="Agriculture" component={AgricultureScreen} />
+        <Drawer.Screen name="TermsOfService" component={TermsOfService} />
     </Drawer.Navigator>
   </NavigationContainer>
   );

@@ -15,17 +15,18 @@ const Sidebar = ({ navigation }) => {
 
     return (
       <View style={styles.socialMediaContainer}>
-        <TouchableOpacity onPress={() => handleSocialMediaPress('https://web.facebook.com/dailynews24ng')}>
-          <MaterialCommunityIcons name="facebook" size={24} color="#4267B2" style={styles.socialMediaIcon} />
+        <TouchableOpacity onPress={() => handleSocialMediaPress(`https://www.facebook.com/profile.php?id=100084
+743025362&mibextid=LQQJ4d`)}>
+          <MaterialCommunityIcons name="facebook" size={24} color="#00923F" style={styles.socialMediaIcon} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleSocialMediaPress('https://twitter.com/dailynews24_NG')}>
-          <MaterialCommunityIcons name="twitter" size={24} color="#1DA1F2" style={styles.socialMediaIcon} />
+        <TouchableOpacity onPress={() => handleSocialMediaPress(`https://twitter.com/bigtech_agency?s=21&t=GJ9QK15QDY2R3CHwV8-1Iw`)}>
+          <MaterialCommunityIcons name="twitter" size={24} color="#00923F" style={styles.socialMediaIcon} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleSocialMediaPress('https://instagram.com/dailynews24.ng/')}>
-          <MaterialCommunityIcons name="instagram" size={24} color="#E4405F" style={styles.socialMediaIcon} />
+        <TouchableOpacity onPress={() => handleSocialMediaPress(`https://www.instagram.com/bigtech_agency/`)}>
+          <MaterialCommunityIcons name="instagram" size={24} color="#00923F" style={styles.socialMediaIcon} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleSocialMediaPress('https://www.youtube.com/@DailyNews24TV')}>
-          <MaterialCommunityIcons name="youtube" size={24} color="#E4405F" style={styles.socialMediaIcon} />
+        <TouchableOpacity onPress={() => handleSocialMediaPress(`https://www.linkedin.com/company/bigtech-agency/`)}>
+          <MaterialCommunityIcons name="linkedin" size={24} color="#00923F" style={styles.socialMediaIcon} />
         </TouchableOpacity>
         {/* Add more social media icons as needed */}
       </View>
@@ -52,8 +53,9 @@ const Sidebar = ({ navigation }) => {
       {/* Sidebar Items */}
       <SidebarItem icon="info" text="About Us" onPress={() => handleSidebarItemPress('AboutUs')} backgroundColor="rgba(0, 146, 63, 0.2)" />
       <SidebarItem icon="contacts" text="Contact Us" onPress={() => handleSidebarItemPress('ContactUs')} backgroundColor="rgba(0, 146, 63, 0.2)" />
-      {/* Privacy Policy */}
       <SidebarItem icon="privacy-tip" text="Privacy Policy" onPress={() => handleSidebarItemPress('PrivacyPolicy')} backgroundColor="rgba(0, 146, 63, 0.2)" />
+      {/* Add Terms of Service menu item */}
+      <SidebarItem icon="description" text="Terms of Service" onPress={() => handleSidebarItemPress('TermsOfService')} backgroundColor="rgba(0, 146, 63, 0.2)" />
 
       {/* Horizontal Line */}
       <View style={styles.horizontalLine} />
@@ -113,13 +115,13 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: '#ddd',
     marginVertical: 16,
-    marginTop: 260,
+    marginTop: 180,
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#333',
-    marginTop: 16,
+    marginTop: 10,
     marginBottom: 8,
   },
   socialMediaContainer: {
@@ -129,7 +131,7 @@ const styles = StyleSheet.create({
   socialMediaIcon: {
     padding: 8,
     borderRadius: 50,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'rgba(0, 146, 63, 0.2)',
   },
 });
 
