@@ -2,7 +2,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink, gql } from '@apollo/client';
 
 const httpLink = createHttpLink({
-  uri: 'https://dailynews24.ng/graphql',
+  uri: 'https://primetimenews.ng/graphql',
 });
 
 const client = new ApolloClient({
