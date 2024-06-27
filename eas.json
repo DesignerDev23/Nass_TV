@@ -1,18 +1,16 @@
 {
-  "cli": {
-    "version": ">= 7.2.0"
-  },
   "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal"
-    },
-    "preview": {
-      "distribution": "internal"
-    },
-    "production": {}
-  },
-  "submit": {
-    "production": {}
+    "release": {
+      "android": {
+        "buildType": "app-bundle",
+        "distribution": "internal",
+        "releaseChannel": "default"
+      },
+      "ios": {
+        "buildType": "archive",
+        "distribution": "internal",
+        "releaseChannel": "default"
+      }
+    }
   }
 }
